@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>学习缩放</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .scale {
+                width: 500px;
+                height: 500px;
+                background-color: #0005;
+            }
+
+            .scaler {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 500px;
+                height: 500px;
+            }
+
+            .scale-left-top {
+                width: 500px;
+                height: 500px;
+                background-color: #0005;
+                margin-top: 50px;
+            }
+
+            .scaler-left-top {
+                position: absolute;
+                top: 550px;
+                left: 0;
+                width: 500px;
+                height: 500px;
+                transform-origin: left top;
+            }
+
+            .zoom-dot-1 {
+                background-color: #00f1;
+                transform: scale(.1);
+            }
+
+            .zoom-dot-2 {
+                background-color: #00f2;
+                transform: scale(.2);
+            }
+
+            .zoom-dot-3 {
+                background-color: #00f3;
+                transform: scale(.3);
+            }
+
+            .zoom-dot-4 {
+                background-color: #00f4;
+                transform: scale(.4);
+            }
+
+            .zoom-dot-5 {
+                background-color: #00f5;
+                transform: scale(.5);
+            }
+
+            .zoom-dot-6 {
+                background-color: #00f6;
+                transform: scale(.6);
+            }
+
+            .zoom-dot-7 {
+                background-color: #00f7;
+                transform: scale(.7);
+            }
+
+            .zoom-dot-8 {
+                background-color: #00f8;
+                transform: scale(.8);
+            }
+
+            .zoom-dot-9 {
+                background-color: #00f9;
+                transform: scale(.9);
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="scale"></div>
+        <div class="scaler zoom-dot-1">
+
+        </div>
+        <!-- <div class="scaler zoom-dot-2"></div> -->
+        <div class="scaler zoom-dot-3"></div>
+        <!-- <div class="scaler zoom-dot-4"></div> -->
+        <div class="scaler zoom-dot-5"></div>
+        <!-- <div class="scaler zoom-dot-6"></div> -->
+        <div class="scaler zoom-dot-7"></div>
+        <!-- <div class="scaler zoom-dot-8"></div> -->
+        <div style="color: yellow;" class="scaler zoom-dot-9">
+            在对拥有定位设置的元素进行缩放时，千万要注意transform-origin，transform-origin的默认值是center center！！！会影响定位！！！
+            元素尺寸发生变化的同时，元素相对于定位原点（比如绝对定为时，设置top和left）的位置也可能会发生变化
+        </div>
+
+        <div class="scale-left-top"></div>
+        <div disc="用于测试缩放对外边距的影响，得知，外边距也会按相同比例缩放" style="margin-top: 50px; background: yellow;"
+            class="scaler-left-top zoom-dot-1"></div>
+        <!-- <div class="scaler-left-top zoom-dot-2"></div> -->
+        <div class="scaler-left-top zoom-dot-3"></div>
+        <!-- <div class="scaler-left-top zoom-dot-4"></div> -->
+        <div class="scaler-left-top zoom-dot-5"></div>
+        <!-- <div class="scaler-left-top zoom-dot-6"></div> -->
+        <div class="scaler-left-top zoom-dot-7"></div>
+        <!-- <div class="scaler-left-top zoom-dot-8"></div> -->
+        <div style="color:yellow" class="scaler-left-top zoom-dot-9">
+            缩放不会对top,left,right,bottom的值缩放，但因为transform-origin，可能会影响真正渲染的位置。
+        </div>
+    </body>
+
+</html>
